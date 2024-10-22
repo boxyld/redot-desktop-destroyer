@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://camtqb44qypen"
-path="res://.godot/imported/SMG-P.png-ba48cb9fd0ac17b64a764174ef5f96b3.ctex"
+uid="uid://cbirgfhs48x18"
+path="res://.godot/imported/SMG-P.png-ecca0307eb33d81bf702856ea46f0261.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://SMG-P.png"
-dest_files=["res://.godot/imported/SMG-P.png-ba48cb9fd0ac17b64a764174ef5f96b3.ctex"]
+source_file="res://textures/SMG-P.png"
+dest_files=["res://.godot/imported/SMG-P.png-ecca0307eb33d81bf702856ea46f0261.ctex"]
 
 [params]
 

@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://c64b2gtjjyea"]
 
-[ext_resource type="Script" path="res://smg.gd" id="1_782i4"]
-[ext_resource type="Texture2D" uid="uid://qcsv33p5mx4d" path="res://hole.png" id="2_p3r6u"]
+[ext_resource type="Script" path="res://scripts/smg.gd" id="1_782i4"]
+[ext_resource type="Texture2D" uid="uid://dfi8gno5x01em" path="res://textures/hole.png" id="2_p3r6u"]
 
 [node name="SMG" type="Node2D"]
 script = ExtResource("1_782i4")
