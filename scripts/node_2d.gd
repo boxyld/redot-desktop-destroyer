@@ -1,5 +1,5 @@
 extends Node2D
-var link := preload("res://smg.tscn")
+var link := preload("res://scenes/smg.tscn")
 # Called when the node enters the scene tree for the first time.
   # Adjust the range as needed
 func shoot():

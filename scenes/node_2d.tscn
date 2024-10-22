@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://sy11dk16m0ep"]
 
-[ext_resource type="Script" path="res://node_2d.gd" id="1_l8op7"]
-[ext_resource type="AudioStream" uid="uid://3s5j78b88i3y" path="res://SMG.mp3" id="2_05pia"]
+[ext_resource type="Script" path="res://scripts/node_2d.gd" id="1_l8op7"]
+[ext_resource type="AudioStream" uid="uid://8jmlnyidq4mo" path="res://sounds/SMG.mp3" id="2_05pia"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_l8op7")
