@@ -17,3 +17,11 @@ func _on_timer_timeout() -> void:
 		shoot()
 		var smgs = get_node("AudioStreamPlayer2D")
 		smgs.play()
+
+
+func _process(delta: float) -> void:
+	
+	# add a routing to escape the app , temporary for now 
+	if Input.is_action_just_pressed("ui_cancel"):
+		get_tree().quit()
+		
