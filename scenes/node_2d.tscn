@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://sy11dk16m0ep"]
+[gd_scene load_steps=4 format=3 uid="uid://sy11dk16m0ep"]
 
 [ext_resource type="Script" path="res://scripts/node_2d.gd" id="1_l8op7"]
 [ext_resource type="AudioStream" uid="uid://8jmlnyidq4mo" path="res://sounds/SMG.mp3" id="2_05pia"]
+[ext_resource type="PackedScene" uid="uid://cgwneaacfbdti" path="res://scenes/animated smg curser.tscn" id="3_rnjyy"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_l8op7")
@@ -15,5 +16,8 @@ stream = ExtResource("2_05pia")
 volume_db = -20.989
 autoplay = true
 max_polyphony = 1000
+
+[node name="AnimatedSprite2D" parent="." instance=ExtResource("3_rnjyy")]
+position = Vector2(1428, 812)
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
