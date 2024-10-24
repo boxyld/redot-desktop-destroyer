@@ -1,7 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://d1836nuhs05ux"]
+[gd_scene load_steps=11 format=3 uid="uid://d1836nuhs05ux"]
 
 [ext_resource type="Script" path="res://scripts/menu.gd" id="1_vjb58"]
 [ext_resource type="Texture2D" uid="uid://cb7hxhqrx7t8e" path="res://textures/menu_spritesheet.png" id="2_vjb58"]
+[ext_resource type="Texture2D" uid="uid://tl2fhmgno1hs" path="res://textures/curser/smg/frame0001.png" id="3_con2f"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vjb58"]
 atlas = ExtResource("2_vjb58")
@@ -60,3 +61,16 @@ script = ExtResource("1_vjb58")
 modulate = Color(1, 1, 1, 0.215686)
 position = Vector2(541, 404)
 sprite_frames = SubResource("SpriteFrames_ufwb2")
+
+[node name="Sprite2D" type="Sprite2D" parent="sprite_menu"]
+position = Vector2(-68.9999, -31)
+scale = Vector2(0.104, 0.102)
+texture = ExtResource("3_con2f")
+
+[node name="TextEdit" type="TextEdit" parent="sprite_menu"]
+offset_left = -98.0
+offset_top = 103.0
+offset_right = 148.0
+offset_bottom = 210.0
+text = "ARROW KEYS/SPACE TO
+ SELECT, ESC TO EXIT"
