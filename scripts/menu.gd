@@ -7,6 +7,7 @@ func _ready() -> void:
 	var screen :Vector2i = get_viewport().size
 	var center :Vector2 = Vector2(screen.x/2, screen.y/2)
 	$sprite_menu.position = center
+	$Sprite2D.position = $sprite_menu/Marker2D.global_position
 func _process(delta: float) -> void:
 	
 	# add a routing to escape the app , temporary for now 

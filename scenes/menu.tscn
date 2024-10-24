@@ -2,11 +2,7 @@
 
 [ext_resource type="Script" path="res://scripts/menu.gd" id="1_vjb58"]
 [ext_resource type="Texture2D" uid="uid://cb7hxhqrx7t8e" path="res://textures/menu_spritesheet.png" id="2_vjb58"]
-<<<<<<< HEAD
-[ext_resource type="Texture2D" uid="uid://tl2fhmgno1hs" path="res://textures/curser/smg/frame0001.png" id="3_con2f"]
-=======
 [ext_resource type="Texture2D" uid="uid://cyn6h15sj87wf" path="res://textures/curser/smg/smgart.png" id="3_con2f"]
->>>>>>> dc82bf241836336c13d0e54a2220695f85da7c39
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vjb58"]
 atlas = ExtResource("2_vjb58")
@@ -67,23 +63,10 @@ position = Vector2(541, 404)
 scale = Vector2(1.3, 1.3)
 sprite_frames = SubResource("SpriteFrames_ufwb2")
 
-<<<<<<< HEAD
-[node name="Sprite2D" type="Sprite2D" parent="sprite_menu"]
-position = Vector2(-68.9999, -31)
-scale = Vector2(0.104, 0.102)
-texture = ExtResource("3_con2f")
+[node name="Marker2D" type="Marker2D" parent="sprite_menu"]
+position = Vector2(-65.3846, -44.6154)
 
-[node name="TextEdit" type="TextEdit" parent="sprite_menu"]
-offset_left = -98.0
-offset_top = 103.0
-offset_right = 148.0
-offset_bottom = 210.0
-text = "ARROW KEYS/SPACE TO
- SELECT, ESC TO EXIT"
-=======
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(865, 491)
 scale = Vector2(0.1165, 0.1225)
 texture = ExtResource("3_con2f")
-
->>>>>>> dc82bf241836336c13d0e54a2220695f85da7c39
