@@ -37,5 +37,6 @@ func _process(delta: float) -> void:
 		
 		
 	if Input.is_action_just_pressed("ui_select") and $sprite_menu.frame == 0:
-
-		get_tree().change_scene_to_file("res://scenes/smg_tool.tscn")
+		Across.swicher = 1
+		print (Across.swicher)
+		get_tree().change_scene_to_file("res://scenes/bord.tscn")

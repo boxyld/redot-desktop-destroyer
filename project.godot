@@ -12,18 +12,20 @@ config_version=5
 
 config/name="desktop destroyer"
 run/main_scene="res://scenes/menu.tscn"
-config/features=PackedStringArray("4.4", "Forward Plus")
+config/features=PackedStringArray("4.3", "Forward Plus")
 boot_splash/bg_color=Color(0, 0, 0, 1)
 boot_splash/show_image=false
 config/icon="res://icon.svg"
+
+[autoload]
+
+Across="*res://scripts/across.gd"
 
 [display]
 
 window/size/mode=3
 window/size/transparent=true
 window/per_pixel_transparency/allowed=true
-mouse_cursor/custom_image="res://textures/SMG-P.png"
-mouse_cursor/custom_image_hotspot=Vector2(9.495, 10.725)
 
 [input]
 
