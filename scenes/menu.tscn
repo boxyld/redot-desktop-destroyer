@@ -70,6 +70,3 @@ position = Vector2(-65.3846, -44.6154)
 position = Vector2(865, 491)
 scale = Vector2(0.1165, 0.1225)
 texture = ExtResource("3_con2f")
-
-[node name="screenshot" type="Sprite2D" parent="."]
-position = Vector2(559, 324)
