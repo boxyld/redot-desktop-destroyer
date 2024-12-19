@@ -1,13 +1,25 @@
 extends Node2D
 
-
+const file_path_pers :String = "user://Screenshot.png"
+var background_persistence
 
 func _ready() -> void:
 	
+	if FileAccess.file_exists(file_path_pers):
+		
+		var image_file :Image
+		image_file = Image.load_from_file(file_path_pers)
+		print("I found the file ")
+		if image_file:
+			$screenshot.texture = ImageTexture.create_from_image(image_file)
+		
 	var screen :Vector2i = get_viewport().size
 	var center :Vector2 = Vector2(screen.x/2, screen.y/2)
 	$sprite_menu.position = center
 	$Sprite2D.position = $sprite_menu/Marker2D.global_position
+	$screenshot.position = center
+	
+	print("scale factor ", get_tree().root.content_scale_factor)
 func _process(delta: float) -> void:
 	
 	# add a routing to escape the app , temporary for now 

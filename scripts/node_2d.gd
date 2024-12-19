@@ -23,5 +23,19 @@ func _process(delta: float) -> void:
 	
 	# add a routing to escape the app , temporary for now 
 	if Input.is_action_just_pressed("ui_cancel"):
+		$AnimatedSprite2D.queue_free()
+		take_screenshot()
+		
 		get_tree().change_scene_to_file("res://scenes/menu.tscn")
+		
+		
+
+
+func take_screenshot():
+	var view_port = get_viewport()
+	
+	view_port.get_texture().get_image().save_png("user://Screenshot.png")
+	var os_dicrectory :String = OS.get_user_data_dir()
+	print(" saved screenshot at ",os_dicrectory)
+
 		
