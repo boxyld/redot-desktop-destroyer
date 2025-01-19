@@ -20,11 +20,12 @@ func _on_timer_timeout() -> void:
 		if Input.is_action_pressed("m1"):
 			shoot()
 			var smgs = get_node("AudioStreamPlayer2D")
-			smgs.play()
+			if swichable ==1:
+				smgs.play()
 func _process(delta: float) -> void:
 	
-		get_tree().change_scene_to_file("res://scenes/menu.tscn")
 	if swichable ==1:
 		if Input.is_action_just_pressed("ui_cancel"):
+			get_tree().change_scene_to_file("res://scenes/menu.tscn")
 
 # there you can add another wopan

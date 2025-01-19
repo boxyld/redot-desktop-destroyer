@@ -4,7 +4,7 @@
 [ext_resource type="AudioStream" uid="uid://8jmlnyidq4mo" path="res://sounds/SMG.mp3" id="2_05pia"]
 [ext_resource type="PackedScene" uid="uid://cgwneaacfbdti" path="res://scenes/animated smg curser.tscn" id="3_rnjyy"]
 
-[node name="Node2D" type="Node2D"]
+[node name="smg" type="Node2D"]
 script = ExtResource("1_pt455")
 
 [node name="Timer" type="Timer" parent="."]
@@ -14,10 +14,9 @@ autostart = true
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("2_05pia")
 volume_db = -20.989
-autoplay = true
 max_polyphony = 1000
 
 [node name="AnimatedSprite2D" parent="." instance=ExtResource("3_rnjyy")]
-position = Vector2(1428, 812)
+position = Vector2(-1347, 121)
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
