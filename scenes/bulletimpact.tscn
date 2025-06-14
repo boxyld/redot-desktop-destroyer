@@ -1,0 +1,38 @@
+[gd_scene load_steps=6 format=3 uid="uid://bmxolcpvhhmsg"]
+
+[ext_resource type="Texture2D" uid="uid://dfi8gno5x01em" path="res://textures/others/hole.png" id="1_ldr12"]
+[ext_resource type="Script" uid="uid://cmci23sis7ub5" path="res://scripts/bulletimpact.gd" id="2_jwt8q"]
+
+[sub_resource type="Curve" id="Curve_jwt8q"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_segrr"]
+curve = SubResource("Curve_jwt8q")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_yghy3"]
+particle_flag_disable_z = true
+spread = 180.0
+initial_velocity_min = 383.34
+initial_velocity_max = 651.83
+gravity = Vector3(0, 98, 0)
+scale_min = 0.01
+scale_max = 0.05
+alpha_curve = SubResource("CurveTexture_segrr")
+
+[node name="BulletImpact" type="Sprite2D"]
+z_index = -3
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("1_ldr12")
+script = ExtResource("2_jwt8q")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+emitting = false
+amount = 16
+texture = ExtResource("1_ldr12")
+lifetime = 0.5
+one_shot = true
+speed_scale = 2.0
+explosiveness = 1.0
+randomness = 1.0
+process_material = SubResource("ParticleProcessMaterial_yghy3")

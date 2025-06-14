@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cyn6h15sj87wf"
-path="res://.godot/imported/smgart.png-705e0ab077db933f5f9274dcc666a6fc.ctex"
+uid="uid://x4iuimfaijka"
+path="res://.godot/imported/smg_muzzle2.png-81f7e5bc4a906eb4e0e7627e886b7072.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://textures/curser/smg/smgart.png"
-dest_files=["res://.godot/imported/smgart.png-705e0ab077db933f5f9274dcc666a6fc.ctex"]
+source_file="res://textures/curser/smg/smg_muzzle2.png"
+dest_files=["res://.godot/imported/smg_muzzle2.png-81f7e5bc4a906eb4e0e7627e886b7072.ctex"]
 
 [params]
 

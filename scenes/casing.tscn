@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://kk1nwlbiiggw"]
+
+[ext_resource type="Texture2D" uid="uid://cm101olndlylc" path="res://textures/others/casing.png" id="1_5rmea"]
+[ext_resource type="Script" uid="uid://bpkp1cesgt8yn" path="res://scripts/casing.gd" id="2_c0kfm"]
+
+[node name="Casing" type="Sprite2D"]
+z_index = -1
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_5rmea")
+script = ExtResource("2_c0kfm")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+rect = Rect2(-96, -96, 192, 192)

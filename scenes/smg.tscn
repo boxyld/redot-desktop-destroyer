@@ -1,11 +1,170 @@
-[gd_scene load_steps=3 format=3 uid="uid://c64b2gtjjyea"]
+[gd_scene load_steps=16 format=3 uid="uid://cgwneaacfbdti"]
 
-[ext_resource type="Script" path="res://scripts/smg.gd" id="1_782i4"]
-[ext_resource type="Texture2D" uid="uid://dfi8gno5x01em" path="res://textures/others/hole.png" id="2_p3r6u"]
+[ext_resource type="Texture2D" uid="uid://c7k0ibjye5wfq" path="res://textures/curser/smg/smg.png" id="2_tr3la"]
+[ext_resource type="Texture2D" uid="uid://duy13c1qusffh" path="res://textures/curser/smg/smg_muzzle1.png" id="3_3opao"]
+[ext_resource type="Texture2D" uid="uid://x4iuimfaijka" path="res://textures/curser/smg/smg_muzzle2.png" id="4_864vq"]
+[ext_resource type="Texture2D" uid="uid://p0qwtb7xnrhn" path="res://textures/curser/smg/smg_muzzle3.png" id="5_8eaa2"]
+[ext_resource type="Script" uid="uid://485s2wsflk6i" path="res://scripts/animated_smg_curser.gd" id="5_tr3la"]
+[ext_resource type="Texture2D" uid="uid://drtfvoy5nent7" path="res://textures/curser/smg/smg_muzzle4.png" id="6_86plq"]
+[ext_resource type="AudioStream" uid="uid://bk0ni7djlyp3r" path="res://sounds/SMG.ogg" id="7_2aunf"]
+[ext_resource type="Texture2D" uid="uid://b6ov6jprpn6t4" path="res://textures/curser/smg/smg_muzzle5.png" id="7_5ikdo"]
+[ext_resource type="Texture2D" uid="uid://swhcw3semdhp" path="res://textures/curser/smg/smg_muzzle6.png" id="8_h0nk3"]
+[ext_resource type="Texture2D" uid="uid://dm1p4rrw4kdpo" path="res://textures/light_strong.png" id="9_3opao"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pexu4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_3opao")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_864vq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_8eaa2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_86plq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_5ikdo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_h0nk3")
+}],
+"loop": true,
+"name": &"default",
+"speed": 40.0
+}]
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_x3gel"]
+playback_mode = 1
+random_pitch = 1.05
+random_volume_offset_db = 3.0
+streams_count = 1
+stream_0/stream = ExtResource("7_2aunf")
+
+[sub_resource type="Animation" id="Animation_3opao"]
+resource_name = "idle"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(96, 96), Vector2(96, 100), Vector2(96, 96)]
+}
+
+[sub_resource type="Animation" id="Animation_x3gel"]
+resource_name = "shoot"
+length = 0.1333
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0666667, 0.1, 0.133333),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(100, 100), Vector2(96, 96), Vector2(100, 100), Vector2(96, 96)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 0.0666667, 0.1, 0.133333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.261799, 0.0, 0.261799, -0.0872665]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_864vq"]
+_data = {
+&"idle": SubResource("Animation_3opao"),
+&"shoot": SubResource("Animation_x3gel")
+}
 
 [node name="SMG" type="Node2D"]
-script = ExtResource("1_782i4")
+texture_filter = 1
+script = ExtResource("5_tr3la")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.095, 0.095)
-texture = ExtResource("2_p3r6u")
+position = Vector2(96.9394, 96.9394)
+rotation = 0.0614847
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_tr3la")
+metadata/_edit_lock_ = true
+
+[node name="MuzzleFlash" type="AnimatedSprite2D" parent="Sprite2D"]
+show_behind_parent = true
+sprite_frames = SubResource("SpriteFrames_pexu4")
+autoplay = "default"
+frame_progress = 0.192349
+
+[node name="Light" type="Sprite2D" parent="Sprite2D"]
+self_modulate = Color(1, 0.882353, 0, 0.501961)
+position = Vector2(-160, -160)
+texture = ExtResource("9_3opao")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.05
+one_shot = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = SubResource("AudioStreamRandomizer_x3gel")
+volume_db = 3.0
+max_polyphony = 3
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_864vq")
+}
+
+[node name="Crosshair" type="Node2D" parent="."]
+
+[node name="Line2D" type="Line2D" parent="Crosshair"]
+points = PackedVector2Array(0, 32, 0, 64)
+width = 2.0
+begin_cap_mode = 2
+end_cap_mode = 2
+round_precision = 3
+
+[node name="Line2D2" type="Line2D" parent="Crosshair"]
+points = PackedVector2Array(-32, 0, -64, 0)
+width = 2.0
+begin_cap_mode = 2
+end_cap_mode = 2
+round_precision = 3
+
+[node name="Line2D3" type="Line2D" parent="Crosshair"]
+points = PackedVector2Array(32, 0, 64, 0)
+width = 2.0
+begin_cap_mode = 2
+end_cap_mode = 2
+round_precision = 3
+
+[node name="Line2D4" type="Line2D" parent="Crosshair"]
+points = PackedVector2Array(0, -32, 0, -64)
+width = 2.0
+begin_cap_mode = 2
+end_cap_mode = 2
+round_precision = 3
+
+[node name="Dot" type="Line2D" parent="Crosshair"]
+points = PackedVector2Array(-0.01, -0.01, 0.01, 0.01)
+width = 2.0
+begin_cap_mode = 2
+end_cap_mode = 2
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
