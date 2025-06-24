@@ -1,2 +1,3 @@
 extends Node
-var swicher = 0 #test
+
+var swicher : String = "blank"

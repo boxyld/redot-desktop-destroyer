@@ -1,72 +1,77 @@
-[gd_scene load_steps=11 format=3 uid="uid://d1836nuhs05ux"]
+[gd_scene load_steps=3 format=3 uid="uid://d1836nuhs05ux"]
 
-[ext_resource type="Script" path="res://scripts/menu.gd" id="1_vjb58"]
-[ext_resource type="Texture2D" uid="uid://cb7hxhqrx7t8e" path="res://textures/menu_spritesheet.png" id="2_vjb58"]
-[ext_resource type="Texture2D" uid="uid://cyn6h15sj87wf" path="res://textures/curser/smg/smgart.png" id="3_con2f"]
+[ext_resource type="Script" uid="uid://dcja8kyo7cv1g" path="res://scripts/menu.gd" id="1_vjb58"]
+[ext_resource type="Texture2D" uid="uid://dkvv4xruopc76" path="res://textures/curser/smg/smgmini.png" id="4_mhnvy"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_vjb58"]
-atlas = ExtResource("2_vjb58")
-region = Rect2(0, 0, 200, 200)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_con2f"]
-atlas = ExtResource("2_vjb58")
-region = Rect2(200, 0, 200, 200)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_mhnvy"]
-atlas = ExtResource("2_vjb58")
-region = Rect2(0, 200, 200, 200)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_4ytvr"]
-atlas = ExtResource("2_vjb58")
-region = Rect2(200, 200, 200, 200)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_g3eks"]
-atlas = ExtResource("2_vjb58")
-region = Rect2(0, 400, 200, 200)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_v86rl"]
-atlas = ExtResource("2_vjb58")
-region = Rect2(200, 400, 200, 200)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_ufwb2"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_vjb58")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_con2f")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_mhnvy")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_4ytvr")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_g3eks")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_v86rl")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
-
-[node name="Node2D" type="Node2D"]
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("1_vjb58")
 
-[node name="sprite_menu" type="AnimatedSprite2D" parent="."]
-modulate = Color(1, 1, 1, 0.215686)
-position = Vector2(541, 404)
-scale = Vector2(1.3, 1.3)
-sprite_frames = SubResource("SpriteFrames_ufwb2")
+[node name="FlowContainer" type="FlowContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 192.0
+alignment = 2
+reverse_fill = true
 
-[node name="Marker2D" type="Marker2D" parent="sprite_menu"]
-position = Vector2(-65.3846, -44.6154)
+[node name="ButtonSMG" type="Button" parent="FlowContainer"]
+layout_mode = 2
+icon = ExtResource("4_mhnvy")
+icon_alignment = 1
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(865, 491)
-scale = Vector2(0.1165, 0.1225)
-texture = ExtResource("3_con2f")
+[node name="Label" type="Label" parent="FlowContainer/ButtonSMG"]
+layout_mode = 0
+offset_top = -23.0
+offset_right = 136.0
+text = "1. SMG"
+horizontal_alignment = 1
+
+[node name="Button2" type="Button" parent="FlowContainer"]
+layout_mode = 2
+text = "OUT OF ORDER"
+icon = ExtResource("4_mhnvy")
+icon_alignment = 1
+
+[node name="Button3" type="Button" parent="FlowContainer"]
+layout_mode = 2
+text = "OUT OF ORDER"
+icon = ExtResource("4_mhnvy")
+icon_alignment = 1
+
+[node name="Button4" type="Button" parent="FlowContainer"]
+layout_mode = 2
+text = "OUT OF ORDER"
+icon = ExtResource("4_mhnvy")
+icon_alignment = 1
+
+[node name="Button5" type="Button" parent="FlowContainer"]
+layout_mode = 2
+text = "OUT OF ORDER"
+icon = ExtResource("4_mhnvy")
+icon_alignment = 1
+
+[node name="Button6" type="Button" parent="FlowContainer"]
+layout_mode = 2
+text = "OUT OF ORDER"
+icon = ExtResource("4_mhnvy")
+icon_alignment = 1
+
+[node name="ExitButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.926
+anchor_right = 0.167
+anchor_bottom = 1.0
+offset_top = -0.0480347
+offset_right = -0.384018
+text = "Exit"
+
+[connection signal="pressed" from="FlowContainer/ButtonSMG" to="." method="_on_button_smg_pressed"]
+[connection signal="pressed" from="ExitButton" to="." method="_on_exit_button_pressed"]
